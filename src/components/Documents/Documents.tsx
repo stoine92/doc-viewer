@@ -18,14 +18,14 @@ const Documents: FC<DocumentsProps> = ({ documents, isLoading }) => {
             {documents?.map((doc) => {
                 if(doc.type !== "folder"){
                     return (
-                        <DocumentItem key={doc.name} file={doc} />
+                        <DocumentItem key={doc.id} file={doc} />
                     )
                 }
                 return (
                     <Collapsible title={doc.name}>
                         {doc.files.map((file) => {
                             return(
-                                <DocumentItem key={file.name} file={file} small/>
+                                <DocumentItem key={file.id} file={file} small/>
                             )
                         })}
                     </Collapsible>
