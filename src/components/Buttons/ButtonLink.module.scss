@@ -7,6 +7,7 @@
     gap: var(--space-x);
     align-items: center;
     text-decoration: underline;
+    color: var(--color-primary-dark);
 
     &:hover {
         color: var(--color-accent-blue);

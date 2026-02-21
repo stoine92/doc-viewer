@@ -5,6 +5,7 @@ import styles from "./Section.module.scss";
 
 interface SectionComponent extends FC<SectionProps> {
     Main: FC<SectionMainProps>;
+    Aside: FC<SectionAsideProps>;
     Head: FC<SectionHeadProps>;
     Content: FC<SectionContentProps>;
     Border: FC<SectionBorderProps>;
@@ -35,6 +36,25 @@ const SectionMain = ({ children }: SectionMainProps) => {
 };
 
 Section.Main = SectionMain;
+
+interface SectionAsideProps {
+    children: ReactNode;
+    sticky?: boolean
+}
+
+const SectionAside = ({ children, sticky }: SectionAsideProps) => {
+    const classes = [styles["section_aside"]];
+
+    if (sticky) { classes.push(styles["section_aside--sticky"])};
+
+    return (
+        <div className={classes.join(" ")}>
+            {children}
+        </div>
+    )
+}
+
+Section.Aside = SectionAside;
 
 
 interface SectionHeadProps {

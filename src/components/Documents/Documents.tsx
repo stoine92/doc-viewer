@@ -1,24 +1,21 @@
-import { useQuery } from "@tanstack/react-query";
-import { fetchDocuments } from "../../lib/fetchDocuments";
+import type { FC } from "react";
 import type { DocumentItemProps } from "../../lib/fetchDocuments";
 import DocumentItem from "./DocumentItem";
 import Collapsible from "../Collapsible/Collapsible";
 
+interface DocumentsProps {
+    documents: DocumentItemProps[] | undefined;
+    isLoading: boolean;
+}
 
-const Documents = () => {
-
-
-    const { data, isLoading } = useQuery<DocumentItemProps[]>({
-        queryFn: () => fetchDocuments(),
-        queryKey: ["documents"],
-    });
+const Documents: FC<DocumentsProps> = ({ documents, isLoading }) => {
 
     if (isLoading) return <div>Loading documents...</div>;
 
     
     return (
         <>
-            {data?.map((doc) => {
+            {documents?.map((doc) => {
                 if(doc.type !== "folder"){
                     return (
                         <DocumentItem key={doc.name} file={doc} />
