@@ -46,16 +46,16 @@ describe("Section", () => {
         expect(h3).toBeInTheDocument();
     });
     
-    it("renders Section.Aside with its children and class", () => {
+    it("renders Section.Side with its children and class", () => {
         const { container } = render(
             <Section>
-                <Section.Aside>
-                    <span>Inner Aside</span>
-                </Section.Aside>
+                <Section.Side>
+                    <span>Inner Side</span>
+                </Section.Side>
             </Section>
         );
 
-        expect(screen.getByText("Inner Aside")).toBeInTheDocument();
+        expect(screen.getByText("Inner Side")).toBeInTheDocument();
 
         const root = container.firstElementChild as HTMLElement | null;
         expect(root).toBeTruthy();

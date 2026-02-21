@@ -4,6 +4,7 @@ import Documents from "../components/Documents/Documents";
 import { useQuery } from "@tanstack/react-query";
 import { fetchDocuments } from "../lib/fetchDocuments";
 import type { DocumentItemProps } from "../lib/fetchDocuments";
+import Collapsible from "../components/Collapsible/Collapsible";
 
 
 function Home () {
@@ -18,6 +19,9 @@ function Home () {
        <Container>
             <Section>
                 <Section.Side>
+                  <Collapsible title="Test">
+                    <span>Test</span>
+                  </Collapsible>
                   <span>Test</span>
                 </Section.Side>
 
