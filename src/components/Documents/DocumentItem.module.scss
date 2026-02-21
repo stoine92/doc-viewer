@@ -28,6 +28,28 @@
         }
     }
 
+    &_badge {
+        display: inline-flex;
+        padding: var(--space-xs);
+
+        &--pdf {
+            background: #fff0f0;
+            color: #c62828;
+        }
+        &--doc {
+            background: #e8f0ff;
+            color: #1a56db;
+        }
+        &--csv {
+            background: #e8f6ef;
+            color: #2e7d32;
+        }
+        &--mov {
+            background: #f3e5f5;
+            color: #6a1b9a;
+        }
+    }
+
     &-date {
         @include mixins.text-m;
         color: var(--text-color-lighter);

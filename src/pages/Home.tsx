@@ -19,9 +19,6 @@ function Home () {
        <Container>
             <Section>
                 <Section.Side>
-                  <Collapsible title="Test">
-                    <span>Test</span>
-                  </Collapsible>
                   <span>Test</span>
                 </Section.Side>
 

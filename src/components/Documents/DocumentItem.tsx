@@ -7,6 +7,7 @@ import ButtonLink from "../Buttons/ButtonLink";
 import PictureAsPdfOutlinedIcon from '@mui/icons-material/PictureAsPdfOutlined';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined';
+import SlideshowOutlinedIcon from '@mui/icons-material/SlideshowOutlined';
 
 //Styles
 import styles from "./DocumentItem.module.scss";
@@ -27,13 +28,14 @@ const DocumentItem: FC<DocumentItemProps> = ({ file, small }) => {
         titleClasses.push(styles["documentItem_type-name--small"]);
     };
 
+    const FileIcon: React.ElementType = file.type === "pdf" ? PictureAsPdfOutlinedIcon : file.type === "doc" ? ArticleOutlinedIcon : file.type === "csv" ? InsertChartOutlinedIcon : SlideshowOutlinedIcon;
 
-    const FileIcon: React.ElementType = file.type === "pdf" ? PictureAsPdfOutlinedIcon : file.type === "doc" ? ArticleOutlinedIcon : InsertChartOutlinedIcon;
-
+    
     return (
         <div className={classes.join(" ")}>
             <div className={styles["documentItem_type"]}>
                 <FileIcon />
+                <span className={`${styles.documentItem_badge} ${styles[`documentItem_badge--${file.type}`]}`} aria-label={`${file.type} file`}>{file.type.toUpperCase()}</span>
                 <ButtonLink className={titleClasses.join(" ")}>{file.name}</ButtonLink>
             </div>
             <span className={styles["documentItem-date"]}>{formatDate(file.added)}</span>
