@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchDocuments } from "../../lib/fetchDocuments";
 import type { DocumentItemProps } from "../../lib/fetchDocuments";
 import DocumentItem from "./DocumentItem";
-import DocumentFolder from "./DocumentFolder";
+import Collapsible from "../Collapsible/Collapsible";
 
 
 const Documents = () => {
@@ -25,7 +25,13 @@ const Documents = () => {
                     )
                 }
                 return (
-                    <DocumentFolder key={doc.name}  folder={doc} />
+                    <Collapsible title={doc.name}>
+                        {doc.files.map((file) => {
+                            return(
+                                <DocumentItem key={file.name} file={file} small/>
+                            )
+                        })}
+                    </Collapsible>
                 );
             })}
         </>

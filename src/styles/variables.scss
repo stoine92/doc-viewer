@@ -23,16 +23,22 @@
     --font-size-3xl: clamp(2.05rem, 1.729rem + 0.857vw, 2.5rem);
 
     // Button
+    --color-primary: #E10078;
+    --color-primary-dark: #091C3D;
+    --color-accent-blue: #1E90FF;
+    --color-bg-light: #F0F4F9;
 
     // Colours
 
-    --headers-color: #2c3e50;
+    --headers-color: #091C3D;
     --text-color: #34495e;
     --text-color-lighter: #727676;
+    --collapsible-bg-color: #e4e6e9;
+
 
     // Commons 
     --border-radius: 5px;
-    --border-color: #ced4da;
+    --border-color: #A0A8B3;
 
     --bold: 600;
     --transition-color: color 0.3s ease;

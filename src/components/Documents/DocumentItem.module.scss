@@ -3,9 +3,13 @@
 
 .documentItem {
     display: flex;
-    padding: var(--font-size-m) var(--font-size-x);
+    padding: var(--font-size-xl) var(--font-size-x);
     align-self: stretch;
     border-bottom: 1px solid var(--border-color);
+
+    &--small {
+        border: none;
+    }
 
     &_type {
         display: flex;
@@ -13,8 +17,13 @@
         flex: 1;
 
         &-name {
-            @include mixins.text-m-bold;
+            @include mixins.text-l-bold;
             color: var(--headers-color);
+
+            &--small {
+                @include mixins.text-l;
+                color: var(--text-color);
+            }
         }
     }
 
