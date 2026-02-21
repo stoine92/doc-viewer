@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchDocuments } from "../../lib/fetchDocuments";
-import type { DocumentItemProps, FileItem } from "../../lib/fetchDocuments";
+import type { DocumentItemProps } from "../../lib/fetchDocuments";
 import DocumentItem from "./DocumentItem";
+import DocumentFolder from "./DocumentFolder";
 
 
 const Documents = () => {
@@ -16,17 +17,18 @@ const Documents = () => {
 
     
     return (
-        <>
+        <div>
             {data?.map((doc) => {
                 if(doc.type !== "folder"){
                     return (
-                        <DocumentItem key={doc.name} file={doc as FileItem} />
+                        <DocumentItem key={doc.name} file={doc} />
                     )
                 }
-                return null;
+                return (
+                    <DocumentFolder folder={doc} />
+                );
             })}
-            <span>Documents</span>
-        </>
+        </div>
     )
 }
 

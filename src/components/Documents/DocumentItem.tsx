@@ -8,7 +8,6 @@ interface DocumentItemProps {
 }
 
 const DocumentItem: FC<DocumentItemProps> = ({ file }) => {
-    console.log(file);
     return (
         <div>
             <span>{file.type}</span>

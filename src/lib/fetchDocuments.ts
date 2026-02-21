@@ -1,15 +1,15 @@
 import raw from "../data/documents.json";
 
 export interface FileItem {
-    type: "pdf" | "folder" | "doc" | "csv" | "mov";
+    type: "pdf"| "doc" | "csv" | "mov";
     name: string;
     added: string;
 }
 
 export interface FolderItem {
-    type: "pdf" | "doc" | "csv" | "mov";
+    type: "folder";
     name: string;
-    folder: FileItem[];
+    files: FileItem[];
 }
 
 
