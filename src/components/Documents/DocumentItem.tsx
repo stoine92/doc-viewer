@@ -25,7 +25,6 @@ const DocumentItem: FC<DocumentItemProps> = ({ file, small }) => {
             <div className={styles["documentItem_type"]}>
                 {/* <span>{file.type}</span> */}
                 <ButtonLink className={titleClasses.join(" ")}>{file.name}</ButtonLink>
-                {/* <span className={titleClasses.join(" ")}>{file.name}</span> */}
             </div>
             <span className={styles["documentItem-date"]}>{formatDate(file.added)}</span>
         </div>
