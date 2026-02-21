@@ -17,9 +17,9 @@ function Home () {
     return (
        <Container>
             <Section>
-                <Section.Aside>
+                <Section.Side>
                   <span>Test</span>
-                </Section.Aside>
+                </Section.Side>
 
                 <Section.Main>
                   <Section.Head title="Page title" subtitle="Page Subtitle" />

@@ -5,7 +5,7 @@ import styles from "./Section.module.scss";
 
 interface SectionComponent extends FC<SectionProps> {
     Main: FC<SectionMainProps>;
-    Aside: FC<SectionAsideProps>;
+    Side: FC<SectionSideProps>;
     Head: FC<SectionHeadProps>;
     Content: FC<SectionContentProps>;
     Border: FC<SectionBorderProps>;
@@ -37,24 +37,24 @@ const SectionMain = ({ children }: SectionMainProps) => {
 
 Section.Main = SectionMain;
 
-interface SectionAsideProps {
+interface SectionSideProps {
     children: ReactNode;
-    sticky?: boolean
 }
 
-const SectionAside = ({ children, sticky }: SectionAsideProps) => {
-    const classes = [styles["section_aside"]];
-
-    if (sticky) { classes.push(styles["section_aside--sticky"])};
+const SectionSide = ({ children }: SectionSideProps) => {
+    const classes = [styles["section_side"]];
 
     return (
         <div className={classes.join(" ")}>
+            <div>
+                <h4>Filter &amp; Sort</h4>
+            </div>
             {children}
         </div>
     )
 }
 
-Section.Aside = SectionAside;
+Section.Side = SectionSide;
 
 
 interface SectionHeadProps {
