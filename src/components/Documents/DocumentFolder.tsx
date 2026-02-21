@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import type { FolderItem } from "../../lib/fetchDocuments";
-import { formatDate } from "../utils/formatDate";
+import styles from "./DocumentFolder.module.scss";
 
 
 interface DocumentFolderProps {
@@ -9,17 +9,22 @@ interface DocumentFolderProps {
 
 const DocumentFolder: FC<DocumentFolderProps> = ({ folder }) => {
     console.log(folder);
-    return (
-        <div>
-            <span>{folder.type}</span>
-            <span>{folder.name}</span>
+    const amountOfItems = folder?.files?.length || 0;
 
-            {folder.files.map((file) => {
+    return (
+        <div className={styles.documentFolder}>
+            <div className={styles.documentFolder_type}>
+                {/* <span>{folder.type}</span> */}
+                <span className={styles["documentFolder_type-name"]}>{folder.name}</span>
+            </div>
+            <span className={styles["documentFolder-files"]}>{`${amountOfItems} files`}</span>
+
+            {/* {folder.files.map((file) => {
                 
                 return(
                     <span key={file.name}>{file.name}</span>
                 )
-            })}
+            })} */}
         </div>
     )
 }
