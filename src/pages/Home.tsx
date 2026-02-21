@@ -10,7 +10,10 @@ function Home () {
                 <Section.Main>
                   <Section.Head title="Page title" subtitle="Page Subtitle" />
                   <Section.Border />
-                  <Documents />
+
+                  <Section.Content>
+                    <Documents />
+                  </Section.Content>
                 </Section.Main>
             </Section>
        </Container>

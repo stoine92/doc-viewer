@@ -6,6 +6,7 @@ import styles from "./Section.module.scss";
 interface SectionComponent extends FC<SectionProps> {
     Main: FC<SectionMainProps>;
     Head: FC<SectionHeadProps>;
+    Content: FC<SectionContentProps>;
     Border: FC<SectionBorderProps>;
 }
 
@@ -51,6 +52,21 @@ const SectionHead = ({ title, subtitle }: SectionHeadProps) => {
 }
 
 Section.Head = SectionHead;
+
+
+interface SectionContentProps {
+    children: ReactNode;
+}
+
+const SectionContent = ({ children }: SectionContentProps) => {
+    return (
+        <div className={styles["section_content"]}>
+            { children }
+        </div>
+    )
+}
+
+Section.Content = SectionContent;
 
 
 interface SectionBorderProps {

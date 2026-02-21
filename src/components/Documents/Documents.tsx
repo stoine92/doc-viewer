@@ -17,7 +17,7 @@ const Documents = () => {
 
     
     return (
-        <div>
+        <>
             {data?.map((doc) => {
                 if(doc.type !== "folder"){
                     return (
@@ -25,10 +25,10 @@ const Documents = () => {
                     )
                 }
                 return (
-                    <DocumentFolder folder={doc} />
+                    <DocumentFolder key={doc.name}  folder={doc} />
                 );
             })}
-        </div>
+        </>
     )
 }
 

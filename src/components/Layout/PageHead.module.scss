@@ -1,3 +1,4 @@
+@use '../../styles/mixins.scss';
 @use '../../styles/breakpoints.scss' as *;
 
 .pageHead {
@@ -30,9 +31,8 @@
         gap: var(--space-x);
 
         &-title {
-            font-size: var(--font-size-xl);
+            @include mixins.text-xl-bold;
             color: var(--headers-color);
-            font-weight: var(--bold);
         }
     }
 }
