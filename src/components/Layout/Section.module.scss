@@ -22,12 +22,27 @@
     }
 
     &_side {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         max-width: var(--aside-container-max-width);
         background: var(--color-white);
         border-radius: var(--border-radius);
-        position: sticky;
         box-shadow: var(--box-shadow);
+
+        &-header {
+            @include mixins.text-l-bold;
+            color: var(--headers-color);
+            padding: var(--space-l);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-l);
+            padding: var(--space-l);
+        }
     }
 
     &_head {

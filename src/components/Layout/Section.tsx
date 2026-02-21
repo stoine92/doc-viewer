@@ -46,10 +46,12 @@ const SectionSide = ({ children }: SectionSideProps) => {
 
     return (
         <div className={classes.join(" ")}>
-            <div>
+            <div className={styles["section_side-header"]}>
                 <h4>Filter &amp; Sort</h4>
             </div>
-            {children}
+            <div className={styles["section_side-content"]}>
+                {children}
+            </div>
         </div>
     )
 }
