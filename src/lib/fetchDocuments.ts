@@ -1,23 +1,23 @@
 import raw from "../data/documents.json";
 
-interface FileItem {
+export interface FileItem {
     type: "pdf" | "folder" | "doc" | "csv" | "mov";
     name: string;
     added: string;
 }
 
-interface FolderItem {
+export interface FolderItem {
     type: "pdf" | "doc" | "csv" | "mov";
     name: string;
     folder: FileItem[];
 }
 
 
-type DocumentItem = FileItem | FolderItem;
+export type DocumentItemProps = FileItem | FolderItem;
 
-const documents: DocumentItem[] = raw as any;
+const documents: DocumentItemProps[] = raw as any;
 
-export const fetchDocuments = async (): Promise<DocumentItem[]> => {
+export const fetchDocuments = async (): Promise<DocumentItemProps[]> => {
 
     return new Promise((resolve) => {
         setTimeout(() => {
