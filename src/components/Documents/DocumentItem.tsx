@@ -11,9 +11,11 @@ interface DocumentItemProps {
 const DocumentItem: FC<DocumentItemProps> = ({ file }) => {
     return (
         <div className={styles.documentItem}>
-            <span>{file.type}</span>
-            <span>{file.name}</span>
-            <span>{formatDate(file.added)}</span>
+            <div className={styles["documentItem_type"]}>
+                {/* <span>{file.type}</span> */}
+                <span className={styles["documentItem_type-name"]}>{file.name}</span>
+            </div>
+            <span className={styles["documentItem-date"]}>{formatDate(file.added)}</span>
         </div>
     )
 }

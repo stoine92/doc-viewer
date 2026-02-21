@@ -1,6 +1,25 @@
+@use "../../styles/mixins.scss";
+
+
 .documentItem {
     display: flex;
-    padding: 1rem;
+    padding: var(--font-size-m) var(--font-size-x);
     align-self: stretch;
-    
+    border-bottom: 1px solid var(--border-color);
+
+    &_type {
+        display: flex;
+        gap: var(--space-x);
+        flex: 1;
+
+        &-name {
+            @include mixins.text-m-bold;
+            color: var(--headers-color);
+        }
+    }
+
+    &-date {
+        @include mixins.text-m;
+        color: var(--text-color-lighter);
+    }
 }
