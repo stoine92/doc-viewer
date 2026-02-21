@@ -7,9 +7,9 @@ interface ButtonProps {
     onClick?: () => void;
 }
 
-const ButtonLink = ({ className, children, type = 'button', onClick }: ButtonProps) => {
+const ButtonLink = ({ className = "", children, type = 'button', onClick }: ButtonProps) => {
 
-  const classes = [
+  const classes: string[] = [
         css.buttonLink,
         className
     ];

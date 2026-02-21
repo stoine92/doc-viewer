@@ -12,8 +12,8 @@ interface DocumentItemProps {
 
 const DocumentItem: FC<DocumentItemProps> = ({ file, small }) => {
 
-    const classes = [styles.documentItem];
-    const titleClasses = [styles["documentItem_type-name"]];
+    const classes: string[] = [styles.documentItem];
+    const titleClasses: string[] = [styles["documentItem_type-name"]];
 
     if (small) {
         classes.push(styles["documentItem--small"]);

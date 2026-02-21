@@ -12,7 +12,7 @@ interface CollapsibleProps {
 
 
 const Collapsible: FC<CollapsibleProps> = ({ title, children }) => {
-	const [open, setOpen] = useState(false);
+	const [open, setOpen] = useState<boolean>(false);
 
     const handleOpenChange = (open: boolean): void => {
         setOpen(open);

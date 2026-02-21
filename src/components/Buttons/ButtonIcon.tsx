@@ -7,14 +7,14 @@ interface ButtonProps {
     icon: React.ElementType;
 }
 
-const ButtonIcon = ({ className, type = 'button', onClick, icon }: ButtonProps) => {
+const ButtonIcon = ({ className = "", type = 'button', onClick, icon }: ButtonProps) => {
 
-  const classes = [
+  const classes: string[] = [
         css.buttonIcon,
         className
     ];
 
-    const Icon = icon;
+    const Icon: React.ElementType = icon;
 
     return(
         <button 
