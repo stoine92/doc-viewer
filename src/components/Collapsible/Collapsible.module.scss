@@ -9,15 +9,19 @@
     &_trigger {
         display: flex;
         padding: var(--font-size-xl) var(--font-size-x);
-        align-self: stretch;
         cursor: pointer;
         background-color: var(--collapsible-bg-color);
+    }
+
+    &_header {
+        display: flex;
+        gap: var(--font-size-x);
+        flex: 1;
+        align-items: center;
 
         &-title {
-            flex: 1;
             @include mixins.text-l-bold;
             color: var(--headers-color);
-            align-self: center;
         }
     }
 
