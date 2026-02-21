@@ -16,4 +16,10 @@
     &:active {
         color: var(--color-primary-dark);
     }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-accent-blue);
+        outline-offset: 2px;
+        border-radius: var(--border-radius);
+    }
   }
