@@ -1,12 +1,19 @@
+import type { FC } from "react";
 import type { ReactNode } from "react";
 import styles from "./Section.module.scss";
 
+
+interface SectionComponent extends FC<SectionProps> {
+    Main: FC<SectionMainProps>;
+    Head: FC<SectionHeadProps>;
+    Border: FC<SectionBorderProps>;
+}
 
 interface SectionProps {
     children: ReactNode;
 }
 
-const Section = ({ children }: SectionProps ) => {
+const Section: SectionComponent = ({ children }: SectionProps ) => {
     return (
         <div className={styles.section}>
             {children}
