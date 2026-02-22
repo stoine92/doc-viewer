@@ -35,6 +35,9 @@ src/
 ### Error Handling 
 `fetchDocuments` has no error state. I'd wrap it in a try/catch and surface the React Query `error` state in the UI with a user-friendly message rather than a silent feature.
 
+### Testing
+Tests cover hooks and components at a mid level to demonstrate approach and structure. Coverage is not exhaustive - the suite serves as a proof of concept rather than full production coverage.
+
 ### File Click / Preview
 Files are display-only. I'd add an `onClick` to `DocumentItem` that opens a `Dialog` (already built) with file metadata and a download link.
 
