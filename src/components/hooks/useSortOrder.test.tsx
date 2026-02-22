@@ -54,10 +54,31 @@ describe("useSortOrder", () => {
         ]);
     });
 
+    it("sorts by name descending when direction is set to desc", () => {
+        const { result } = renderHook(() => useSortOrder(getMockDocuments()));
+
+        act(() => {
+            result.current.setSortDirection({ value: "desc" });
+        });
+
+        expect(getNames(result.current.sortedDocuments)).toEqual([
+            "Report E",
+            "Report D",
+            "Report C",
+            "Report B",
+            "Report A",
+        ]);
+    });
+
     it("exposes the correct default sortKey and sortDirection", () => {
         const { result } = renderHook(() => useSortOrder(getMockDocuments()));
         expect(result.current.sortKey.value).toBe("name");
         expect(result.current.sortDirection.value).toBe("asc");
+    });
+
+    it("returns undefined when documents are undefined", () => {
+        const { result } = renderHook(() => useSortOrder(undefined));
+        expect(result.current.sortedDocuments).toBeUndefined();
     });
 
     it("sorts files by date asc when sortKey is 'added'", () => {

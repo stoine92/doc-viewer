@@ -6,12 +6,11 @@ interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   name?: string;
   placeholder?: string;
-  disabled?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   autoComplete?: string;
 }
 
-const InputField: FC<InputFieldProps> = ({ label, name, placeholder, onChange, type = 'text', autoComplete, disabled }) => {
+const InputField: FC<InputFieldProps> = ({ label, name, placeholder, onChange, type = 'text', autoComplete }) => {
   return (
     <div className={styles["form"]}>
       {label && <label className={styles["form-label"]} htmlFor={name}>{label}</label>}
@@ -22,7 +21,6 @@ const InputField: FC<InputFieldProps> = ({ label, name, placeholder, onChange, t
         placeholder={placeholder}
         onChange={onChange}
         autoComplete={autoComplete}
-        disabled={disabled}
       />
     </div>
   );

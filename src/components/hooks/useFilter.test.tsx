@@ -66,6 +66,39 @@ describe("useFilter", () => {
         ]);
     });
 
+    it("filter documents by partial name match", () => {
+        const { result } = renderHook(() => useFilter(getMockDocuments()));
+
+        act(() => {
+            result.current.setFilter("Repor");
+        });
+
+        expect(getNames(result.current.filteredDocuments)).toEqual([
+            "Report A",
+            "Report C",
+            "Report B",
+            "Report E",
+            "Report D",
+        ]);
+    });
+
+    it("returns undefined when documents are undefined", () => {
+        const { result } = renderHook(() => useFilter(undefined));
+        expect(result.current.filteredDocuments).toBeUndefined();
+    });
+
+    it("ignores leading whitespace in the filter string", () => {
+        const { result } = renderHook(() => useFilter(getMockDocuments()));
+
+        act(() => {
+            result.current.setFilter("   Report C");
+        });
+
+        expect(getNames(result.current.filteredDocuments)).toEqual([
+            "Report C"
+        ]);
+    });
+
     it("returns an empty array when no documents match the search", () => {
         const { result } = renderHook(() => useFilter(getMockDocuments()));
 
