@@ -21,6 +21,21 @@ function Home () {
     const { sortedDocuments, sortKey, sortDirection, setSortKey, setSortDirection } = useSortOrder(filteredDocuments);
 
 
+    if(documents?.length === 0 && !isLoading) {
+        return (
+            <Container>
+                <Section>
+                    <Section.Main>
+                        <Section.Head 
+                            title="No documents found" 
+                            subtitle="Please add some documents to get started"
+                        />
+                    </Section.Main>
+                </Section>
+            </Container>
+        )
+    }
+
     return (
        <Container>
             <Section>
@@ -37,8 +52,8 @@ function Home () {
 
                 <Section.Main>
                   <Section.Head 
-                    title="Page title" 
-                    subtitle="Page Subtitle"
+                    title="My Documents" 
+                    subtitle={`Showing ${sortedDocuments ? sortedDocuments.length : 0} document${sortedDocuments && sortedDocuments.length !== 1 ? "s" : ""}`}
                     DialogContent={
                       <>
                         <FilterAndSort 

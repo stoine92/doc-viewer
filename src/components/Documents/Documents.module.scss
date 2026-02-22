@@ -1,0 +1,9 @@
+@use "../../styles/mixins.scss";
+
+.documents {
+
+    &-empty {
+        @include mixins.text-l;
+        color: var(--text-color-lighter);
+    }
+}
