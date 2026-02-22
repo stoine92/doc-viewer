@@ -63,8 +63,12 @@
         }
 
         &-title {
-            @include mixins.text-3xl-bold;
+            @include mixins.text-xl-bold;
             color: var(--headers-color);
+
+            @media (min-width: $media-md) {
+                @include mixins.text-3xl-bold;
+            }
         }
 
         &-subtitle {
