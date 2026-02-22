@@ -2,6 +2,7 @@ import type { FC } from "react";
 import type { DocumentItemProps } from "../../lib/fetchDocuments";
 import DocumentItem from "./DocumentItem";
 import Collapsible from "../Collapsible/Collapsible";
+import Skeleton from "../Skeleton/Skeleton";
 
 interface DocumentsProps {
     documents: DocumentItemProps[] | undefined;
@@ -10,7 +11,7 @@ interface DocumentsProps {
 
 const Documents: FC<DocumentsProps> = ({ documents, isLoading }) => {
 
-    if (isLoading) return <div>Loading documents...</div>;
+    if (isLoading) return <Skeleton />;
 
     
     return (
