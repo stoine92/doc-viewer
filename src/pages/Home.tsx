@@ -5,9 +5,8 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchDocuments } from "../lib/fetchDocuments";
 import type { DocumentItemProps } from "../lib/fetchDocuments";
 import { useFilter } from "../components/hooks/useFilter";
-import InputField from "../components/Form/InputField";
-import SelectField from "../components/Form/SelectField";
 import { useSortOrder } from "../components/hooks/useSortOrder";
+import FilterAndSort from "../components/FilterAndSort/FilterAndSort";
 
 
 function Home () {
@@ -26,43 +25,34 @@ function Home () {
        <Container>
             <Section>
                 <Section.Side>
-                  <InputField 
-                    label="Search Documents"
-                    name="search"
-                    placeholder="Type to search..."
-                    value={filter}
-                    onChange={(e) => setFilter(e.target.value)}
-                  />
-                  
-                  <SelectField
-                    label="Sort by"
-                    name="sortKey"
-                    value={sortKey.value}
-                    onChange={(e) => setSortKey({ value: e.target.value as "name" | "added" })}
-                    options={[
-                      {code: "name", description: "Name"},
-                      {code: "added", description: "Date Added"}
-                    ]}
-                  />
-
-
-                  <SelectField
-                    label="Sort direction"
-                    name="sortDirection"
-                    value={sortDirection.value}
-                    onChange={(e) => setSortDirection({ value: e.target.value as "asc" | "desc" })}
-                    options={[
-                      {code: "asc", description: "Ascending"},
-                      {code: "desc", description: "Descending"}
-                    ]}
+                  <FilterAndSort 
+                    filter={filter}
+                    setFilter={setFilter}
+                    sortKey={sortKey}
+                    setSortKey={setSortKey}
+                    sortDirection={sortDirection}
+                    setSortDirection={setSortDirection}
                   />
                 </Section.Side>
 
                 <Section.Main>
-                  <Section.Head title="Page title" subtitle="Page Subtitle" />
-
+                  <Section.Head 
+                    title="Page title" 
+                    subtitle="Page Subtitle"
+                    DialogContent={
+                      <>
+                        <FilterAndSort 
+                          filter={filter}
+                          setFilter={setFilter}
+                          sortKey={sortKey}
+                          setSortKey={setSortKey}
+                          sortDirection={sortDirection}
+                          setSortDirection={setSortDirection}
+                        />
+                      </>
+                    }
+                  />
                   <Section.Border />
-
                   <Section.Content>
                     <Documents documents={sortedDocuments} isLoading={isLoading} />
                   </Section.Content>

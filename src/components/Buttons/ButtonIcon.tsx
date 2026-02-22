@@ -5,14 +5,19 @@ interface ButtonProps {
     type?: "button" | "submit" | "reset";
     onClick?: () => void;
     icon: React.ElementType;
+    noBg?: boolean;
 }
 
-const ButtonIcon = ({ className = "", type = 'button', onClick, icon }: ButtonProps) => {
+const ButtonIcon = ({ className = "", type = 'button', onClick, icon, noBg }: ButtonProps) => {
 
   const classes: string[] = [
         css.buttonIcon,
         className
     ];
+
+    if(noBg) {
+        classes.push(css["buttonIcon--noBg"]);
+    }
 
     const Icon: React.ElementType = icon;
 

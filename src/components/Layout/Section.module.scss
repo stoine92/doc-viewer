@@ -51,9 +51,16 @@
 
     &_head {
         display: flex;
-        flex-direction: column;
         align-items: flex-start;
         gap: var(--space-x);
+        justify-content: space-between;
+        align-items: center;
+        
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-x);
+        }
 
         &-title {
             @include mixins.text-3xl-bold;
@@ -67,6 +74,37 @@
                 display: block;
                 @include mixins.text-l;
                 color: var(--text-color);
+            }
+        }
+
+        &-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-m) var(--space-l);
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            @include mixins.text-l-bold;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color var(--transition-speed);
+
+            &:hover {
+                background-color: #C4005A;
+            }
+
+            &:focus-visible {
+                outline: 2px solid var(--color-primary);
+                outline-offset: 2px;
+            }
+
+            &:active {
+                background-color: #A3004A;
+            }
+
+            @media (min-width: $media-xl) {
+                display: none;
             }
         }
     }

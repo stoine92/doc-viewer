@@ -1,7 +1,7 @@
 import { useState, type Dispatch } from "react";
 import type { DocumentItemProps } from "../../lib/fetchDocuments";
 
-interface UseSortOrderReturn {
+export interface UseSortOrderReturn {
     sortedDocuments: DocumentItemProps[] | undefined;
     sortKey: SortKeyInterface;
     sortDirection: SortDirectionInterface;
@@ -9,11 +9,11 @@ interface UseSortOrderReturn {
     setSortDirection: Dispatch<React.SetStateAction<SortDirectionInterface>>;
 }
 
-interface SortKeyInterface {
+export interface SortKeyInterface {
     value: "name" | "added";
 }
 
-interface SortDirectionInterface {
+export interface SortDirectionInterface {
     value: "asc" | "desc";
 }
 

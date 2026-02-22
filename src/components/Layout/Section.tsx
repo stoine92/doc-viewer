@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import type { ReactNode } from "react";
+import Dialog from "../Dialog/DIalog";
 import styles from "./Section.module.scss";
 
 
@@ -62,13 +63,23 @@ Section.Side = SectionSide;
 interface SectionHeadProps {
     title: string;
     subtitle?: string;
+    DialogContent?: ReactNode;
 }
 
-const SectionHead = ({ title, subtitle }: SectionHeadProps) => {
+const SectionHead = ({ title, subtitle, DialogContent }: SectionHeadProps) => {
     return(
         <div className={styles["section_head"]}>
-            <h1 className={styles["section_head-title"]}>{title}</h1>
-            {subtitle && <h3 className={styles["section_head-subtitle"]}>{subtitle}</h3>}
+            <div className={styles["section_head-info"]}>
+                <h1 className={styles["section_head-title"]}>{title}</h1>
+                {subtitle && <h3 className={styles["section_head-subtitle"]}>{subtitle}</h3>}
+            </div>
+
+            <Dialog
+                title="Filter &amp; Sort"
+                trigger={<button className={styles["section_head-button"]}>Filter &amp; Sort</button>}
+            >
+                { DialogContent }
+            </Dialog>
         </div>
     )
 }

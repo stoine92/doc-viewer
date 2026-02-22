@@ -31,5 +31,11 @@
       outline: 2px solid var(--color-accent-blue);
       outline-offset: 2px;
     }
+
+    &--noBg {
+        background: none;
+        color: var(--color-primary-dark);
+        border: none;
+    }
     
   }

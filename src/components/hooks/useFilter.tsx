@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { DocumentItemProps } from "../../lib/fetchDocuments";
 
-interface useFilterReturn {
+export interface useFilterReturn {
     filter: string;
     setFilter: (value: string) => void;
     filteredDocuments: DocumentItemProps[] | undefined;
