@@ -20,12 +20,16 @@ npm run build   # production build
 - Responsive - sidebar on desktop, dialog on mobile
 
 ## Project Structure
+```
 src/
-|-- components/     #UI components + colocated tests + hooks 
-|-- data/           #documents.json mock file
-|-- pages/          # Home/tsx
-|-- styles/         # Global SCSS + variables + mixins
-
+├── components      #UI components + colocated tests + hooks 
+├── data            #documents.json mock file
+├── lib             #fetchDocuments
+├── main.tsx        # Application entry point
+├── pages           # Home.TSX
+├── setupTests.ts   # Vitest + jest-dom configuration
+└── styles          # Global SCSS + variables + mixins
+```
 ## What I Left Out
 
 ### Error Handling 
