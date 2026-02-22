@@ -44,11 +44,12 @@ export function useSortOrder (documents: DocumentItemProps[] | undefined): UseSo
         return sortDirection.value === "asc" ? comparison : -comparison;
     }) : undefined;
 
+
     return { 
         sortedDocuments,
         sortKey,
         sortDirection,
         setSortKey,
-        setSortDirection 
+        setSortDirection,
     };
 }

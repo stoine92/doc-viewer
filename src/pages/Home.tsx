@@ -17,7 +17,7 @@ function Home () {
         queryKey: ["documents"],
     });
 
-    const { filter, setFilter, clearFilter, filteredDocuments } = useFilter(documents);
+    const { filter, setFilter, filteredDocuments } = useFilter(documents);
 
     const { sortedDocuments, sortKey, sortDirection, setSortKey, setSortDirection } = useSortOrder(filteredDocuments);
 
